@@ -9,8 +9,7 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="relative overflow-hidden py-24 md:py-36">
-      <AmbientOrb variant="c" className="-end-40 top-20 size-[32rem]" strength={1.1} depth={0.06} />
-      <AmbientOrb variant="a" className="-start-40 bottom-0 size-[26rem]" strength={0.8} depth={0.04} />
+      <AmbientOrb variant="c" className="-end-28 top-24 size-[22rem]" strength={1.1} depth={0.06} />
 
       <div className="shell relative">
         <SectionHeading number={3} eyebrow={t.sections.about.eyebrow} title={t.sections.about.title} />

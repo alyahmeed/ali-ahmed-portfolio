@@ -25,8 +25,7 @@ export default function VideoSection() {
 
   return (
     <section id="video" className="relative overflow-hidden py-24 md:py-36">
-      <AmbientOrb variant="b" className="-start-40 top-1/4 size-[36rem]" strength={1.2} depth={0.08} />
-      <AmbientOrb variant="a" className="-end-40 bottom-10 size-[28rem]" strength={0.8} depth={0.04} />
+      <AmbientOrb variant="b" className="-start-28 top-1/4 size-[24rem]" strength={1.2} depth={0.08} />
 
       <div className="shell relative">
         <SectionHeading number={2} eyebrow={t.sections.video.eyebrow} title={t.sections.video.title} />

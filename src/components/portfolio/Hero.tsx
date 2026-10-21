@@ -13,9 +13,8 @@ export default function Hero() {
       className="relative flex min-h-svh items-end overflow-hidden pb-14 pt-28 md:pb-20"
     >
       {/* soft colour blobs */}
-      <AmbientOrb variant="a" className="-start-32 top-4 size-[34rem]" strength={1} depth={0.04} />
-      <AmbientOrb variant="b" className="-end-40 top-1/3 size-[40rem]" strength={1.3} depth={0.07} />
-      <AmbientOrb variant="c" className="bottom-0 start-1/3 size-[30rem]" strength={0.8} depth={0.03} />
+      <AmbientOrb variant="a" className="-start-24 top-10 size-[22rem]" strength={1} depth={0.04} />
+      <AmbientOrb variant="b" className="-end-24 top-1/3 size-[26rem]" strength={1.3} depth={0.07} />
 
       <div
         className="absolute inset-[-10%] flex -rotate-6 flex-col justify-center gap-4"

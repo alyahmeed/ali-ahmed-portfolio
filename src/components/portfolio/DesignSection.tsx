@@ -26,18 +26,6 @@ export default function DesignSection() {
     setFilter: (value: string) => void
   }[] = [
     {
-      id: 'print',
-      title: t.sections.print.title,
-      filters: [
-        { id: 'all', label: t.filters.print.all },
-        { id: 'books', label: t.filters.print.books },
-        { id: 'memos', label: t.filters.print.memos },
-        { id: 'covers', label: t.filters.print.covers },
-      ],
-      filter: printFilter,
-      setFilter: setPrintFilter,
-    },
-    {
       id: 'social',
       title: t.sections.social.title,
       filters: [
@@ -48,6 +36,18 @@ export default function DesignSection() {
       ],
       filter: socialFilter,
       setFilter: setSocialFilter,
+    },
+    {
+      id: 'print',
+      title: t.sections.print.title,
+      filters: [
+        { id: 'all', label: t.filters.print.all },
+        { id: 'books', label: t.filters.print.books },
+        { id: 'memos', label: t.filters.print.memos },
+        { id: 'covers', label: t.filters.print.covers },
+      ],
+      filter: printFilter,
+      setFilter: setPrintFilter,
     },
   ]
 
@@ -67,8 +67,7 @@ export default function DesignSection() {
 
   return (
     <section id="design" className="relative overflow-hidden py-24 md:py-36">
-      <AmbientOrb variant="a" className="-start-40 top-10 size-[34rem]" strength={0.9} depth={0.05} />
-      <AmbientOrb variant="c" className="-end-48 top-1/2 size-[30rem]" strength={1.1} depth={0.07} />
+      <AmbientOrb variant="a" className="-start-28 top-16 size-[22rem]" strength={0.9} depth={0.05} />
 
       <div className="shell relative">
         <SectionHeading number={1} eyebrow={t.sections.design.eyebrow} title={t.sections.design.title} />
