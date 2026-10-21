@@ -6,6 +6,9 @@ editable **Vite + React + TypeScript + Tailwind** project.
 Arabic, RTL, dark editorial layout — gold accent on near-black, film grain overlay,
 scrolling image marquee, scroll-reveal animations.
 
+**Live:** https://alyahmeed.github.io/ali-ahmed-portfolio/
+**Repo:** https://github.com/alyahmeed/ali-ahmed-portfolio
+
 ## Getting started
 
 ```bash
@@ -78,3 +81,13 @@ Custom utilities: `shell` (page gutter), `grain`, `gold-line`, `card-veil`,
   were named from their source file names — adjust them in `src/data/portfolio.ts`.
 - `Reveal` uses `IntersectionObserver`; elements below the fold start hidden and
   fade in. `prefers-reduced-motion` is respected.
+
+## Deployment
+
+`.github/workflows/deploy.yml` builds and publishes to GitHub Pages on every push
+to `main`. Vite's `base` is relative (`./`) and all asset paths are relative, so the
+same build works from a domain root and from the `/ali-ahmed-portfolio/` sub-path.
+
+To deploy elsewhere (Vercel, Netlify, Cloudflare Pages) just point the provider at
+the repository — the build command is `npm run build` and the output directory is
+`dist`.
