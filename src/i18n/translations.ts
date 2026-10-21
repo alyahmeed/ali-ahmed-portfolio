@@ -58,7 +58,6 @@ export const en = {
     print: {
       all: 'All',
       books: 'Books',
-      memos: 'Memos',
       covers: 'Book Covers',
     },
     social: {
@@ -222,7 +221,6 @@ export const ar: Dict = {
     print: {
       all: 'الكل',
       books: 'الكتب',
-      memos: 'المذكرات',
       covers: 'أغلفة الكتب',
     },
     social: {

@@ -42,7 +42,6 @@ export default function DesignSection() {
       filters: [
         { id: 'all', label: t.filters.print.all },
         { id: 'books', label: t.filters.print.books },
-        { id: 'memos', label: t.filters.print.memos },
         { id: 'covers', label: t.filters.print.covers },
       ],
       filter: printFilter,

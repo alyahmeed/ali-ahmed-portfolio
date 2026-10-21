@@ -16,20 +16,6 @@ export const categories: { id: Category; label: string; count: number }[] = [
   { id: 'social', label: 'السوشيال ميديا', count: 13 },
 ]
 
-export const printFilters = [
-  { id: 'all', label: 'الكل' },
-  { id: 'books', label: 'الكتب' },
-  { id: 'memos', label: 'المذكرات' },
-  { id: 'covers', label: 'أغلفة الكتب' },
-]
-
-export const socialFilters = [
-  { id: 'all', label: 'الكل' },
-  { id: 'posts', label: 'منشورات' },
-  { id: 'campaigns', label: 'حملات' },
-  { id: 'contests', label: 'مسابقات' },
-]
-
 export const projects: Project[] = [
   {
     id: 1,
@@ -37,7 +23,7 @@ export const projects: Project[] = [
     client: 'مركز الفردوس',
     image: 'assets/book-majalis-front.jpg',
     category: 'print',
-    tags: ['books', 'memos'],
+    tags: ['books'],
     width: 1024,
     height: 768,
   },
@@ -47,7 +33,7 @@ export const projects: Project[] = [
     client: 'مركز الفردوس',
     image: 'assets/book-majalis-back.jpg',
     category: 'print',
-    tags: ['books', 'memos'],
+    tags: ['books'],
     width: 1024,
     height: 768,
   },
