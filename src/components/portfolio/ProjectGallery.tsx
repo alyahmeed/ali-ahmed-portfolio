@@ -76,8 +76,7 @@ export default function ProjectGallery({
             >
               {active && (
                 <span className="absolute inset-0 rounded-full grad-brand shadow-[0_8px_24px_-10px_hsl(var(--primary)/0.8)]" />
-              )}
-              <span className="relative">{item.label}</span>
+              )}              <span className="relative">{item.label}</span>
             </button>
           )
         })}

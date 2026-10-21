@@ -25,12 +25,11 @@ export const en = {
     eyebrow: 'Selected Works — 2026',
     titleLines: [
       [
-        { text: 'Portfolio', accent: false },
-        { text: 'of', accent: false },
+        { text: 'Ali', accent: true, font: 'display' },
+        { text: 'Ahmed', accent: true, font: 'display' },
       ],
       [
-        { text: 'Ali', accent: true },
-        { text: 'Ahmed', accent: true },
+        { text: 'portfolio', accent: false, font: 'accent' },
       ],
     ],
     tagline: 'Print design · Social media · Video editing',
@@ -170,12 +169,12 @@ export const ar: Dict = {
     eyebrow: 'Selected Works — 2026',
     titleLines: [
       [
-        { text: 'معرض', accent: false },
-        { text: 'أعمال', accent: false },
+        { text: 'علي', accent: true, font: 'display' },
+        { text: 'أحمد', accent: true, font: 'display' },
       ],
       [
-        { text: 'علي', accent: true },
-        { text: 'أحمد', accent: true },
+        { text: 'معرض', accent: false, font: 'accent' },
+        { text: 'أعمال', accent: false, font: 'accent' },
       ],
     ],
     tagline: 'تصميم طباعي · سوشيال ميديا · مونتاج فيديو',

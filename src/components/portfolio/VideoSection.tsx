@@ -99,7 +99,7 @@ export default function VideoSection() {
                 <span className="relative flex size-14 items-center justify-center">
                   <span className="absolute inset-0 rounded-full border border-primary animate-float-ring" />
                   <span className="absolute inset-0 rounded-full border border-primary animate-float-ring [animation-delay:1.2s]" />
-                  <span className="relative flex size-12 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform duration-500 group-hover:scale-110">
+                  <span className="relative flex size-12 items-center justify-center rounded-full grad-brand text-primary-foreground transition-transform duration-500 group-hover:scale-110">
                     <PlayIcon />
                   </span>
                 </span>

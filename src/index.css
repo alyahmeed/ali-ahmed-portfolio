@@ -79,7 +79,7 @@
     --popover: 40 18% 10%;
     --popover-foreground: 40 30% 94%;
     --primary: 41 78% 58%;
-    --primary-foreground: 40 25% 8%;
+    --primary-foreground: 40 40% 99%;
     --secondary: 40 12% 16%;
     --secondary-foreground: 40 30% 94%;
     --muted: 40 12% 16%;
@@ -99,7 +99,9 @@
     --grain-opacity: 0.3;
     --grain-blend: overlay;
     --shimmer: 0 0% 100% / 0.06;
-    --brand-grad-b: 28 88% 60%;
+    --brand-grad-b: 28 80% 56%;
+    --btn-a: 32 78% 34%;
+    --btn-b: 21 80% 25%;
   }
 
   /* ── Light theme ────────────────────────────────────────────────── */
@@ -112,7 +114,7 @@
     --popover: 40 30% 99%;
     --popover-foreground: 35 18% 12%;
     --primary: 30 75% 33%;
-    --primary-foreground: 40 40% 98%;
+    --primary-foreground: 40 40% 99%;
     --secondary: 38 24% 90%;
     --secondary-foreground: 35 18% 12%;
     --muted: 38 24% 92%;
@@ -131,7 +133,9 @@
     --grain-opacity: 0.16;
     --grain-blend: multiply;
     --shimmer: 0 0% 100% / 0.5;
-    --brand-grad-b: 22 80% 40%;
+    --brand-grad-b: 24 78% 40%;
+    --btn-a: 30 76% 31%;
+    --btn-b: 20 78% 23%;
   }
 
   * {
@@ -157,6 +161,7 @@
   :root {
     --font-latin-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
     --font-latin-display: 'Space Grotesk', 'Manrope', ui-sans-serif, system-ui, sans-serif;
+    --font-latin-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
     --font-arabic-sans: 'Thmanyah Sans', 'Manrope', ui-sans-serif, system-ui, sans-serif;
     --font-arabic-display: 'Thmanyah Serif Display', 'Thmanyah Sans', serif;
     --font-arabic-text: 'Thmanyah Serif Text', 'Thmanyah Sans', serif;
@@ -165,11 +170,13 @@
   [lang='en'] {
     --font-sans: var(--font-latin-sans);
     --font-display: var(--font-latin-display);
+    --font-accent: var(--font-latin-serif);
   }
 
   [lang='ar'] {
     --font-sans: var(--font-arabic-sans);
     --font-display: var(--font-arabic-display);
+    --font-accent: var(--font-arabic-sans);
     --font-text: var(--font-arabic-text);
   }
 }
@@ -184,6 +191,11 @@
 @layer utilities {
   .font-display {
     font-family: var(--font-display, var(--font-latin-display));
+  }
+
+  /* Secondary family used to set the word "portfolio" apart from "Ali Ahmed" */
+  .font-accent {
+    font-family: var(--font-accent, var(--font-latin-serif));
   }
 
   .font-text {
@@ -266,7 +278,7 @@
   }
 
   .text-gradient-gold {
-    background: linear-gradient(100deg, hsl(var(--primary)) 0%, var(--brand-grad-b) 50%, hsl(var(--primary)) 100%);
+    background: linear-gradient(100deg, hsl(var(--primary)) 0%, hsl(var(--brand-grad-b)) 50%, hsl(var(--primary)) 100%);
     background-size: 200% 100%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -363,9 +375,14 @@
     transform: translateX(120%) skewX(-18deg);
   }
 
-  /* Gradient-filled primary button */
+  /* Gradient-filled primary button — deep amber so the white label stays legible */
   .btn-gradient {
-    background-image: linear-gradient(100deg, hsl(var(--primary)) 0%, var(--brand-grad-b) 55%, hsl(var(--primary)) 100%);
+    background-image: linear-gradient(
+      100deg,
+      hsl(var(--btn-a)) 0%,
+      hsl(var(--btn-b)) 55%,
+      hsl(var(--btn-a)) 100%
+    );
     background-size: 200% 100%;
     transition: background-position 600ms ease, box-shadow 400ms ease, transform 300ms ease;
   }
@@ -378,7 +395,7 @@
 
   /* Static brand gradient used for chips, icons and play buttons */
   .grad-brand {
-    background-image: linear-gradient(120deg, hsl(var(--primary)) 0%, var(--brand-grad-b) 100%);
+    background-image: linear-gradient(120deg, hsl(var(--btn-a)) 0%, hsl(var(--btn-b)) 100%);
   }
 
   /* Slow zoom applied to the marquee thumbnails on hover */

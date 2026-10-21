@@ -1,6 +1,7 @@
 import Reveal from './Reveal'
 import { heroMarqueeRows } from '../../data/portfolio'
 import { useT } from '../../i18n/LocaleContext'
+import { cn } from '../../lib/utils'
 
 export default function Hero() {
   const t = useT()
@@ -54,7 +55,7 @@ export default function Hero() {
 
         <h1 className="font-display text-[clamp(3.5rem,13vw,11rem)] font-extrabold leading-[1.15] tracking-tight">
           {t.hero.titleLines.map((row, rowIndex) => (
-            <span key={rowIndex} className="flex flex-wrap gap-x-[0.25em]">
+            <span key={rowIndex} className="flex flex-wrap items-baseline gap-x-[0.25em]">
               {row.map((word, wordIndex) => (
                 <Reveal
                   key={`${word.text}-${wordIndex}`}
@@ -63,11 +64,11 @@ export default function Hero() {
                   delay={120 * (rowIndex * 2 + wordIndex)}
                 >
                   <span
-                    className={
-                      word.accent
-                        ? 'inline-block text-gradient-gold'
-                        : 'inline-block text-gradient'
-                    }
+                    className={cn(
+                      'inline-block',
+                      word.accent ? 'text-gradient-gold' : 'text-gradient',
+                      word.font === 'accent' ? 'font-accent font-normal' : 'font-display',
+                    )}
                   >
                     {word.text}
                   </span>
