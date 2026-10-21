@@ -1,4 +1,3 @@
-import AmbientOrb from './AmbientOrb'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 import { skills } from '../../data/portfolio'
@@ -9,7 +8,7 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="relative overflow-hidden py-24 md:py-36">
-      <AmbientOrb variant="c" className="-end-28 top-24 size-[22rem]" strength={1.1} depth={0.06} />
+      <div className="aurora aurora-a -end-32 top-24 size-[26rem]" />
 
       <div className="shell relative">
         <SectionHeading number={3} eyebrow={t.sections.about.eyebrow} title={t.sections.about.title} />

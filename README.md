@@ -22,8 +22,8 @@ Built with **Vite + React + TypeScript + Tailwind**.
   Drive links).
 - **Portrait in the hero** — `assets/me.png` sits at the very top of the page, inside
   a frosted frame.
-- **Glass & motion** — frosted glass surfaces, ambient glass orbs that follow the
-  pointer and travel with the scroll, brand gradients, glow borders, shine sweeps,
+- **Glass & motion** — frosted glass surfaces (header, cards, chips, stats, footer),
+  soft aurora blobs in the background, brand gradients, glow borders, shine sweeps,
   scroll-reveal animations.
 
 ## Getting started
@@ -60,13 +60,11 @@ src/
     translations.ts            ⭐ all copy in English + Arabic
     LocaleContext.tsx          locale provider, dir switching, persistence
   theme/ThemeContext.tsx       dark / light provider, persistence
-  hooks/useAmbientMotion.ts    pointer + scroll parallax driving the glass orbs
   lib/utils.ts                 cn() helper
   components/portfolio/
     SiteHeader.tsx             fixed header, language + theme toggles, mobile drawer
     ScrollProgress.tsx         gold scroll-progress bar
     Hero.tsx                   headline + portrait + 3-row scrolling marquee
-    AmbientOrb.tsx             glass orb (frosted disc + coloured blob)
     SectionHeading.tsx         numbered section header with outline numeral
     DesignSection.tsx          print + social blocks, filters, expandable galleries
     GalleryGrid.tsx            4-tile preview with "+N" overlay and expand

@@ -1,4 +1,3 @@
-import AmbientOrb from './AmbientOrb'
 import Reveal from './Reveal'
 import { contactCards } from '../../data/portfolio'
 import { useT } from '../../i18n/LocaleContext'
@@ -26,7 +25,7 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="relative overflow-hidden py-24 md:py-36">
-      <AmbientOrb variant="b" className="-start-24 bottom-0 size-[22rem]" strength={1.1} depth={0.06} />
+      <div className="aurora aurora-b -start-24 bottom-0 size-[30rem]" />
 
       <div className="shell relative">
         <Reveal as="p" className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-primary">

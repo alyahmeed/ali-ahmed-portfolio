@@ -1,4 +1,3 @@
-import AmbientOrb from './AmbientOrb'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 import { reelSlots, videoSlots } from '../../data/portfolio'
@@ -25,7 +24,7 @@ export default function VideoSection() {
 
   return (
     <section id="video" className="relative overflow-hidden py-24 md:py-36">
-      <AmbientOrb variant="b" className="-start-28 top-1/4 size-[24rem]" strength={1.2} depth={0.08} />
+      <div className="aurora aurora-b -start-40 top-1/4 size-[30rem]" />
 
       <div className="shell relative">
         <SectionHeading number={2} eyebrow={t.sections.video.eyebrow} title={t.sections.video.title} />
@@ -112,7 +111,8 @@ export default function VideoSection() {
         </div>
 
         {/* Reels — vertical edits, part of the same video section */}
-        <div className="mt-20 md:mt-28">
+        <div className="relative mt-20 md:mt-28">
+          <div className="aurora aurora-c -end-40 top-10 size-[28rem]" />
           <Reveal className="mb-8 max-w-xl">
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
               {t.reels.kicker}

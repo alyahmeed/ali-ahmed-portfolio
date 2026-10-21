@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react'
 import { cn } from '../../lib/utils'
-import AmbientOrb from './AmbientOrb'
 import GalleryGrid from './GalleryGrid'
 import ProjectCard from './ProjectCard'
 import Reveal from './Reveal'
@@ -67,8 +66,6 @@ export default function DesignSection() {
 
   return (
     <section id="design" className="relative overflow-hidden py-24 md:py-36">
-      <AmbientOrb variant="a" className="-start-28 top-16 size-[22rem]" strength={0.9} depth={0.05} />
-
       <div className="shell relative">
         <SectionHeading number={1} eyebrow={t.sections.design.eyebrow} title={t.sections.design.title} />
 

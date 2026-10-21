@@ -1,5 +1,4 @@
 import Reveal from './Reveal'
-import AmbientOrb from './AmbientOrb'
 import { heroMarqueeRows } from '../../data/portfolio'
 import { useT } from '../../i18n/LocaleContext'
 import { cn } from '../../lib/utils'
@@ -13,8 +12,9 @@ export default function Hero() {
       className="relative flex min-h-svh items-end overflow-hidden pb-14 pt-28 md:pb-20"
     >
       {/* soft colour blobs */}
-      <AmbientOrb variant="a" className="-start-24 top-10 size-[22rem]" strength={1} depth={0.04} />
-      <AmbientOrb variant="b" className="-end-24 top-1/3 size-[26rem]" strength={1.3} depth={0.07} />
+      <div className="aurora aurora-a -start-24 top-10 size-[28rem]" />
+      <div className="aurora aurora-b -end-32 top-1/3 size-[34rem]" />
+      <div className="aurora aurora-c bottom-0 start-1/3 size-[26rem]" />
 
       <div
         className="absolute inset-[-10%] flex -rotate-6 flex-col justify-center gap-4"
