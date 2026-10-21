@@ -6,7 +6,7 @@ export default function SiteFooter() {
   const t = useT()
 
   return (
-    <footer className="border-t border-border">
+    <footer className="glass-strong border-t border-border">
       <div className="shell flex flex-col items-start justify-between gap-6 py-10 md:flex-row md:items-center">
         <Reveal as="p" className="text-sm text-muted-foreground">
           {t.footer.rights} <span dir="ltr">— {t.footer.year}</span>

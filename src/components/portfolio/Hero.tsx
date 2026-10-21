@@ -1,4 +1,5 @@
 import Reveal from './Reveal'
+import AmbientOrb from './AmbientOrb'
 import { heroMarqueeRows } from '../../data/portfolio'
 import { useT } from '../../i18n/LocaleContext'
 import { cn } from '../../lib/utils'
@@ -12,9 +13,9 @@ export default function Hero() {
       className="relative flex min-h-svh items-end overflow-hidden pb-14 pt-28 md:pb-20"
     >
       {/* soft colour blobs */}
-      <div className="aurora aurora-a -start-24 top-10 size-[28rem]" />
-      <div className="aurora aurora-b -end-32 top-1/3 size-[34rem]" />
-      <div className="aurora aurora-c bottom-0 start-1/3 size-[26rem]" />
+      <AmbientOrb variant="a" className="-start-32 top-4 size-[34rem]" strength={1} depth={0.04} />
+      <AmbientOrb variant="b" className="-end-40 top-1/3 size-[40rem]" strength={1.3} depth={0.07} />
+      <AmbientOrb variant="c" className="bottom-0 start-1/3 size-[30rem]" strength={0.8} depth={0.03} />
 
       <div
         className="absolute inset-[-10%] flex -rotate-6 flex-col justify-center gap-4"
@@ -46,55 +47,86 @@ export default function Hero() {
       <div className="hero-veil pointer-events-none absolute inset-0" />
 
       <div className="shell relative">
-        <Reveal className="mb-6 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.3em] text-primary">
-          <span className="h-px w-10 bg-primary" />
-          <span>
-            {t.hero.eyebrow}
-          </span>
-        </Reveal>
+        <div className="grid items-end gap-12 md:grid-cols-[1.15fr_0.85fr] md:gap-14">
+          <div>
+            <Reveal className="mb-6 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.3em] text-primary">
+              <span className="h-px w-10 bg-primary" />
+              <span>{t.hero.eyebrow}</span>
+            </Reveal>
 
-        <h1 className="font-display text-[clamp(3.5rem,13vw,11rem)] font-extrabold leading-[1.15] tracking-tight">
-          {t.hero.titleLines.map((row, rowIndex) => (
-            <span key={rowIndex} className="flex flex-wrap items-baseline gap-x-[0.25em]">
-              {row.map((word, wordIndex) => (
-                <Reveal
-                  key={`${word.text}-${wordIndex}`}
-                  as="span"
-                  className="inline-block"
-                  delay={120 * (rowIndex * 2 + wordIndex)}
-                >
-                  <span
-                    className={cn(
-                      'inline-block',
-                      word.accent ? 'text-gradient-gold' : 'text-gradient',
-                      word.font === 'accent' ? 'font-accent font-normal' : 'font-display',
-                    )}
-                  >
-                    {word.text}
-                  </span>
-                </Reveal>
+            <h1 className="font-display text-[clamp(2.25rem,12.5vw,4.5rem)] font-extrabold leading-[1.12] tracking-tight md:text-[clamp(2.75rem,6.8vw,6.25rem)]">
+              {t.hero.titleLines.map((row, rowIndex) => (
+                <span key={rowIndex} className="flex flex-wrap items-baseline gap-x-[0.25em]">
+                  {row.map((word, wordIndex) => (
+                    <Reveal
+                      key={`${word.text}-${wordIndex}`}
+                      as="span"
+                      className="inline-block"
+                      delay={120 * (rowIndex * 2 + wordIndex)}
+                    >
+                      <span
+                        className={cn(
+                          'inline-block',
+                          word.accent ? 'text-gradient-gold' : 'text-gradient',
+                          word.font === 'accent' ? 'font-accent font-normal' : 'font-display',
+                        )}
+                      >
+                        {word.text}
+                      </span>
+                    </Reveal>
+                  ))}
+                </span>
               ))}
-            </span>
-          ))}
-        </h1>
+            </h1>
 
-        <div className="mt-14 flex flex-wrap items-center justify-between gap-6 md:mt-20">
-          <Reveal as="p" delay={480} className="max-w-md text-base text-muted-foreground md:text-lg">
-            {t.hero.tagline}
-          </Reveal>
-          <Reveal as="div" delay={560} className="flex gap-3">
-            <a
-              href="#social"
-              className="btn-gradient rounded-full px-6 py-3 text-sm font-semibold text-primary-foreground"
-            >
-              {t.hero.ctaPrimary}
-            </a>
-            <a
-              href="#video"
-              className="shine rounded-full border border-border px-6 py-3 text-sm font-semibold transition-colors hover:border-primary hover:text-primary"
-            >
-              {t.hero.ctaSecondary}
-            </a>
+            <div className="mt-10 flex flex-wrap items-center justify-between gap-6 md:mt-14">
+              <Reveal as="p" delay={480} className="max-w-md text-base text-muted-foreground md:text-lg">
+                {t.hero.tagline}
+              </Reveal>
+              <Reveal as="div" delay={560} className="flex gap-3">
+                <a
+                  href="#design"
+                  className="btn-gradient rounded-full px-6 py-3 text-sm font-semibold text-primary-foreground"
+                >
+                  {t.hero.ctaPrimary}
+                </a>
+                <a
+                  href="#video"
+                  className="shine glass rounded-full border border-border px-6 py-3 text-sm font-semibold transition-colors hover:border-primary hover:text-primary"
+                >
+                  {t.hero.ctaSecondary}
+                </a>
+              </Reveal>
+            </div>
+          </div>
+
+          {/* Portrait — first thing on the page */}
+          <Reveal
+            as="div"
+            delay={120}
+            className="order-first md:order-none"
+          >
+            <div className="group relative mx-auto w-full max-w-[19rem] md:max-w-[22rem]">
+              <div className="absolute -inset-3 rounded-[2rem] bg-[radial-gradient(circle_at_50%_30%,hsl(var(--primary)/0.28),transparent_70%)] blur-xl transition-opacity duration-700 group-hover:opacity-80" />
+
+              <div className="glass-strong relative aspect-[4/5] overflow-hidden rounded-[1.75rem] ring-glow">
+                <img
+                  src="assets/me.png"
+                  alt={t.hero.photoLabel}
+                  className="absolute inset-0 size-full scale-105 object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.12]"
+                />
+                <div className="card-veil absolute inset-0 opacity-70 transition-opacity duration-700 group-hover:opacity-40" />
+                <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 p-5">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary">
+                    {t.hero.photoCaption}
+                  </p>
+                </div>
+              </div>
+
+              <span className="glass-pill absolute -start-3 bottom-8 rounded-full px-4 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-primary">
+                {t.hero.photoBadge}
+              </span>
+            </div>
           </Reveal>
         </div>
       </div>

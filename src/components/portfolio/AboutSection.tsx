@@ -1,5 +1,6 @@
-import SectionHeading from './SectionHeading'
+import AmbientOrb from './AmbientOrb'
 import Reveal from './Reveal'
+import SectionHeading from './SectionHeading'
 import { skills } from '../../data/portfolio'
 import { useT } from '../../i18n/LocaleContext'
 
@@ -8,25 +9,13 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="relative overflow-hidden py-24 md:py-36">
-      <div className="aurora aurora-a -end-32 top-24 size-[26rem]" />
+      <AmbientOrb variant="c" className="-end-40 top-20 size-[32rem]" strength={1.1} depth={0.06} />
+      <AmbientOrb variant="a" className="-start-40 bottom-0 size-[26rem]" strength={0.8} depth={0.04} />
 
       <div className="shell relative">
-        <SectionHeading number={5} eyebrow={t.sections.about.eyebrow} title={t.sections.about.title} />
+        <SectionHeading number={3} eyebrow={t.sections.about.eyebrow} title={t.sections.about.title} />
 
-        <div className="grid items-center gap-10 md:grid-cols-[1fr_1.3fr] md:gap-16">
-          <Reveal className="group relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-md border border-border bg-card ring-glow">
-            <img
-              src="assets/me.png"
-              alt={t.about.name}
-              className="absolute inset-0 size-full scale-110 object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.16]"
-            />
-            <div className="card-veil absolute inset-0 opacity-80 transition-opacity duration-700 group-hover:opacity-50" />
-            <span className="pointer-events-none absolute -end-8 -top-8 size-28 rounded-full bg-primary/25 opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-100" />
-            <p className="absolute bottom-4 start-4 font-mono text-[10px] tracking-[0.25em] text-primary">
-              {t.about.location}
-            </p>
-          </Reveal>
-
+        <div className="grid gap-10 md:grid-cols-[1.35fr_1fr] md:gap-16">
           <div>
             <Reveal as="p" className="text-2xl font-bold leading-relaxed md:text-3xl">
               {t.about.name}{' '}
@@ -40,34 +29,47 @@ export default function AboutSection() {
               {t.about.bio}
             </Reveal>
 
-            <Reveal as="div" delay={140} className="mt-8 flex gap-10">
-              <div>
-                <p dir="ltr" className="text-end font-display text-4xl font-extrabold text-primary md:text-5xl">
-                  +2
-                </p>
-                <p className="mt-1 text-sm text-muted-foreground">{t.about.expLabel}</p>
-              </div>
-              <div>
-                <p dir="ltr" className="text-end font-display text-4xl font-extrabold text-primary md:text-5xl">
-                  +20
-                </p>
-                <p className="mt-1 text-sm text-muted-foreground">{t.about.projectsLabel}</p>
-              </div>
-            </Reveal>
-
             <ul className="mt-10 flex flex-wrap gap-2">
               {skills.map((skill, index) => (
                 <Reveal
                   key={skill}
                   as="li"
                   delay={index * 50}
-                  className="rounded-full border border-border px-4 py-2 text-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary hover:text-primary"
+                  className="glass-pill rounded-full px-4 py-2 text-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary hover:text-primary"
                 >
                   {t.skills[skill]}
                 </Reveal>
               ))}
             </ul>
           </div>
+
+          {/* Stats card */}
+          <Reveal delay={140} className="h-fit">
+            <div className="glass-strong relative overflow-hidden rounded-md p-7 md:p-9">
+              <span className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,hsl(var(--primary)/0.16),transparent_60%)]" />
+
+              <div className="relative grid grid-cols-2 gap-6">
+                <div>
+                  <p dir="ltr" className="text-end font-display text-5xl font-extrabold text-primary md:text-6xl">
+                    +4
+                  </p>
+                  <p className="mt-2 text-sm text-muted-foreground">{t.about.expLabel}</p>
+                </div>
+                <div>
+                  <p dir="ltr" className="text-end font-display text-5xl font-extrabold text-primary md:text-6xl">
+                    +100
+                  </p>
+                  <p className="mt-2 text-sm text-muted-foreground">{t.about.projectsLabel}</p>
+                </div>
+              </div>
+
+              <div className="relative mt-8 border-t border-border pt-5">
+                <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary">
+                  {t.about.location}
+                </p>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

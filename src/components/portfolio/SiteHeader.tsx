@@ -77,7 +77,7 @@ export default function SiteHeader() {
       className={cn(
         'fixed inset-x-0 top-0 z-40 transition-all duration-500',
         scrolled
-          ? 'border-b border-border bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/65'
+          ? 'glass-strong border-b border-border'
           : 'bg-transparent',
       )}
     >
@@ -110,7 +110,7 @@ export default function SiteHeader() {
             onClick={toggleLocale}
             aria-label={t.common.language}
             title={t.common.language}
-            className="group flex h-9 items-center gap-1.5 rounded-full border border-border px-3 text-xs font-semibold transition-all duration-300 hover:border-primary hover:text-primary"
+            className="glass-pill flex h-9 items-center gap-1.5 rounded-full px-3 text-xs font-semibold transition-all duration-300 hover:border-primary hover:text-primary"
           >
             <GlobeIcon />
             <span className="font-mono tracking-widest">{locale === 'en' ? 'EN' : 'ع'}</span>
@@ -122,7 +122,7 @@ export default function SiteHeader() {
             onClick={toggleTheme}
             aria-label={t.common.theme}
             title={`${t.common.theme}: ${theme === 'dark' ? t.common.dark : t.common.light}`}
-            className="flex size-9 items-center justify-center rounded-full border border-border transition-all duration-300 hover:border-primary hover:text-primary"
+            className="glass-pill flex size-9 items-center justify-center rounded-full transition-all duration-300 hover:border-primary hover:text-primary"
           >
             <span
               className={cn(
@@ -147,7 +147,7 @@ export default function SiteHeader() {
             onClick={() => setOpen((v) => !v)}
             aria-label={t.header.menu}
             aria-expanded={open}
-            className="flex size-9 items-center justify-center rounded-full border border-border md:hidden"
+            className="glass-pill flex size-9 items-center justify-center rounded-full md:hidden"
           >
             <span className="relative block h-3 w-4">
               <span
@@ -176,7 +176,7 @@ export default function SiteHeader() {
       {/* Mobile drawer */}
       <div
         className={cn(
-          'overflow-hidden border-border bg-background/95 backdrop-blur-xl transition-all duration-500 md:hidden',
+          'overflow-hidden border-border glass-strong transition-all duration-500 md:hidden',
           open ? 'max-h-96 border-b' : 'max-h-0',
         )}
       >

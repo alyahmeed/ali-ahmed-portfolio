@@ -1,3 +1,4 @@
+import AmbientOrb from './AmbientOrb'
 import Reveal from './Reveal'
 import { contactCards } from '../../data/portfolio'
 import { useT } from '../../i18n/LocaleContext'
@@ -25,11 +26,11 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="relative overflow-hidden py-24 md:py-36">
-      <div className="aurora aurora-b -start-24 bottom-0 size-[30rem]" />
+      <AmbientOrb variant="b" className="-start-32 bottom-0 size-[32rem]" strength={1.1} depth={0.06} />
 
       <div className="shell relative">
         <Reveal as="p" className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-primary">
-          06 <span dir="ltr">— {t.sections.contact.eyebrow}</span>
+          04 <span dir="ltr">— {t.sections.contact.eyebrow}</span>
         </Reveal>
 
         <Reveal
@@ -56,7 +57,7 @@ export default function ContactSection() {
               href={card.href}
               target="_blank"
               rel="noreferrer"
-              className="group rounded-md border border-border p-5 transition-all duration-500 hover:-translate-y-1 hover:border-primary"
+              className="group glass rounded-md p-5 transition-all duration-500 hover:-translate-y-1 hover:border-primary"
             >
               <p className="text-sm text-muted-foreground">{t.contact[card.key]}</p>
               <p

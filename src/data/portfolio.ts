@@ -205,8 +205,7 @@ export const projects: Project[] = [
 
 /** Header navigation — labels come from the translation dictionary. */
 export const navLinks = [
-  { href: '#social', key: 'social' as const },
-  { href: '#print', key: 'print' as const },
+  { href: '#design', key: 'design' as const },
   { href: '#video', key: 'video' as const },
   { href: '#about', key: 'about' as const },
 ]
@@ -278,40 +277,23 @@ export const heroMarqueeRows = [
   },
 ]
 
-/** 16:9 video promo placeholders — swap in real videos when they are ready. */
+/**
+ * 16:9 video slots. The real files are hosted on Google Drive and get dropped
+ * in through `src` — the titles below only label the placeholders.
+ */
 export const videoSlots = [
-  {
-    kind: 'Showreel',
-    title: 'شورت ريل',
-    poster: 'assets/poster-ashad-alnas-balaa.jpg',
-    aspect: 'aspect-video md:col-span-2',
-  },
-  {
-    kind: 'مونتاج',
-    title: 'فيديو مونتاج',
-    poster: 'assets/social-ferdaws-jummah.jpg',
-    aspect: 'aspect-video',
-  },
-  {
-    kind: 'مونتاج',
-    title: 'حلقة كاملة',
-    poster: 'assets/book-majalis-front.jpg',
-    aspect: 'aspect-video',
-  },
-  {
-    kind: 'إعلان',
-    title: 'فيديو إعلاني',
-    poster: 'assets/social-eid.jpg',
-    aspect: 'aspect-video',
-  },
-]
+  { key: 'showreel', aspect: 'aspect-video md:col-span-2' },
+  { key: 'promo', aspect: 'aspect-video' },
+  { key: 'episode', aspect: 'aspect-video' },
+  { key: 'ad', aspect: 'aspect-video' },
+] as const
 
-/** 9:16 reel placeholders. */
+/** 9:16 reel slots — same deal, waiting for the Drive links. */
 export const reelSlots = [
-  { kind: 'ريلز', title: 'ريلز — الفردوس', poster: 'assets/social-ferdaws-jummah.jpg' },
-  { kind: 'ريلز', title: 'ريلز — المناسبات', poster: 'assets/social-eid.jpg' },
-  { kind: 'ريلز', title: 'ريلز — صحبة طليحة', poster: 'assets/poster-sohba-saliha.jpg' },
-  { kind: 'ريلز', title: 'ريلز — سعد بن معاذ', poster: 'assets/poster-saad-bin-moaaz.jpg' },
-  { kind: 'ريلز', title: 'ريلز — النصائح', poster: 'assets/social-ferdaws-tips.jpg' },
-  { kind: 'ريلز', title: 'ريلز — كفالة', poster: 'assets/social-kafala.jpg' },
-]
+  { key: 'ferdaws' },
+  { key: 'occasions' },
+  { key: 'sohba' },
+  { key: 'saad' },
+  { key: 'tips' },
+  { key: 'kafala' },
+] as const

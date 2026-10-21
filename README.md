@@ -12,14 +12,19 @@ Built with **Vite + React + TypeScript + Tailwind**.
   the header. The choice is stored in `localStorage` (`portfolio:locale`).
 - **Two themes** — dark (default) and light, toggled from the header, stored in
   `localStorage` (`portfolio:theme`) and applied through `data-theme` on `<html>`.
-- **Two type systems** — Space Grotesk + Manrope for English, self-hosted
-  **Thmanya / ثمانية** for Arabic (Sans for body, Serif Display for headings).
+- **Two type systems** — Space Grotesk + Manrope + Instrument Serif for English,
+  self-hosted **Thmanya / ثمانية** for Arabic (Sans for body, Serif Display for
+  headings).
 - **Expandable galleries** — every grid shows 4 tiles with a `+N` overlay; clicking it
   expands the full set in place.
-- **Video & reels sections** — 16:9 promo slots and 9:16 reel slots, ready for real
-  video files.
-- **Gradients & motion** — brand gradients, aurora blobs, gradient headings, glow
-  borders, shine sweeps, scroll-reveal animations.
+- **Two main sections** — `01 Design` (print collateral + social media campaigns) and
+  `02 Video & Editing` (16:9 promo slots + 9:16 reel slots, waiting for the Google
+  Drive links).
+- **Portrait in the hero** — `assets/me.png` sits at the very top of the page, inside
+  a frosted frame.
+- **Glass & motion** — frosted glass surfaces, ambient glass orbs that follow the
+  pointer and travel with the scroll, brand gradients, glow borders, shine sweeps,
+  scroll-reveal animations.
 
 ## Getting started
 
@@ -34,12 +39,10 @@ npm run preview  # serve the production build
 
 | # | Section | anchor | component |
 | --- | --- | --- | --- |
-| 01 | Social Media | `#social` | `ProjectGallery` |
-| 02 | Print Design | `#print` | `ProjectGallery` |
-| 03 | Video & Editing | `#video` | `VideoSection` |
-| 04 | Reels | `#reels` | `ReelsSection` |
-| 05 | About Me | `#about` | `AboutSection` |
-| 06 | Contact | `#contact` | `ContactSection` |
+| 01 | Design (print + social) | `#design` | `DesignSection` |
+| 02 | Video & Editing | `#video` | `VideoSection` (reels live inside it) |
+| 03 | About Me | `#about` | `AboutSection` |
+| 04 | Contact | `#contact` | `ContactSection` |
 
 ## Project structure
 
@@ -57,18 +60,19 @@ src/
     translations.ts            ⭐ all copy in English + Arabic
     LocaleContext.tsx          locale provider, dir switching, persistence
   theme/ThemeContext.tsx       dark / light provider, persistence
+  hooks/useAmbientMotion.ts    pointer + scroll parallax driving the glass orbs
   lib/utils.ts                 cn() helper
   components/portfolio/
     SiteHeader.tsx             fixed header, language + theme toggles, mobile drawer
     ScrollProgress.tsx         gold scroll-progress bar
-    Hero.tsx                   headline + 3-row scrolling marquee + aurora blobs
+    Hero.tsx                   headline + portrait + 3-row scrolling marquee
+    AmbientOrb.tsx             glass orb (frosted disc + coloured blob)
     SectionHeading.tsx         numbered section header with outline numeral
-    ProjectGallery.tsx         filters + expandable gallery (used by social & print)
+    DesignSection.tsx          print + social blocks, filters, expandable galleries
     GalleryGrid.tsx            4-tile preview with "+N" overlay and expand
     ProjectCard.tsx            project tile with gradient veil on hover
-    VideoSection.tsx           promo panel + 16:9 video slots
-    ReelsSection.tsx           9:16 reels grid
-    AboutSection.tsx           portrait (assets/me.png), bio, stats, skills
+    VideoSection.tsx           promo panel + 16:9 slots + 9:16 reels grid
+    AboutSection.tsx           bio, stats card, skills
     ContactSection.tsx         big CTA + WhatsApp / Email / Behance
     SiteFooter.tsx             copyright + social links
     Reveal.tsx                 IntersectionObserver scroll-reveal wrapper
@@ -103,12 +107,13 @@ Tailwind maps them to `bg-background`, `text-foreground`, `bg-primary`,
 
 Custom utilities: `shell` (page gutter), `grain`, `gold-line`, `card-veil`,
 `hero-veil`, `text-outline`, `text-gradient`, `text-gradient-gold`, `glass`,
-`ring-glow`, `aurora`, `shine`, `btn-gradient`, `grad-brand`, `hoverZoomLink`.
+`glass-strong`, `glass-pill`, `ring-glow`, `aurora`, `shine`, `btn-gradient`,
+`grad-brand`, `hoverZoomLink`.
 
 ### Fonts
 
-- **English** — Space Grotesk (display) + Manrope (body) + JetBrains Mono (labels),
-  loaded from Google Fonts.
+- **English** — Space Grotesk (display) + Instrument Serif (accent) + Manrope (body)
+  + JetBrains Mono (labels), loaded from Google Fonts.
 - **Arabic** — Thmanya (ثمانية) from
   [engdawood/thmanyah-font-web](https://github.com/engdawood/thmanyah-font-web),
   self-hosted in `public/assets/fonts/` and declared with `@font-face` in
@@ -116,7 +121,8 @@ Custom utilities: `shell` (page gutter), `grain`, `gold-line`, `card-veil`,
   Serif Text 400/700.
 
 The active font stack is switched by the `lang` attribute on `<html>`:
-`--font-display` and `--font-sans` resolve to the Latin or Arabic families.
+`--font-display` and `--font-sans` resolve to the Latin or Arabic families, and
+`--font-accent` picks the secondary face used for the second half of the headline.
 
 ## Notes
 
@@ -125,8 +131,9 @@ The active font stack is switched by the `lang` attribute on `<html>`:
   were named from their source file names — adjust them in `src/data/portfolio.ts`.
 - `Reveal` uses `IntersectionObserver`; elements below the fold start hidden and
   fade in. `prefers-reduced-motion` is respected.
-- The video and reel slots are placeholders with poster images; drop real media in
-  and swap the `<img>` for a `<video>` when the files are ready.
+- The video and reel slots are empty frosted frames waiting for the real files —
+  add the Google Drive links in `src/data/portfolio.ts` and swap the placeholder
+  markup in `VideoSection.tsx` for a `<video>` / `<iframe>`.
 
 ## Deployment
 
