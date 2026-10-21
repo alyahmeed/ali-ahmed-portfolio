@@ -1,23 +1,20 @@
 import Reveal from './Reveal'
 import { heroMarqueeRows } from '../../data/portfolio'
-
-const titleRows = [
-  [
-    { text: 'معرض', accent: false },
-    { text: 'أعمال', accent: false },
-  ],
-  [
-    { text: 'علي', accent: true },
-    { text: 'أحمد', accent: true },
-  ],
-]
+import { useT } from '../../i18n/LocaleContext'
 
 export default function Hero() {
+  const t = useT()
+
   return (
     <section
       id="top"
       className="relative flex min-h-svh items-end overflow-hidden pb-14 pt-28 md:pb-20"
     >
+      {/* soft colour blobs */}
+      <div className="aurora aurora-a -start-24 top-10 size-[28rem]" />
+      <div className="aurora aurora-b -end-32 top-1/3 size-[34rem]" />
+      <div className="aurora aurora-c bottom-0 start-1/3 size-[26rem]" />
+
       <div
         className="absolute inset-[-10%] flex -rotate-6 flex-col justify-center gap-4"
         style={{ opacity: 0.45 }}
@@ -51,21 +48,27 @@ export default function Hero() {
         <Reveal className="mb-6 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.3em] text-primary">
           <span className="h-px w-10 bg-primary" />
           <span>
-            Selected Works <span dir="ltr">— 2026</span>
+            {t.hero.eyebrow}
           </span>
         </Reveal>
 
         <h1 className="font-display text-[clamp(3.5rem,13vw,11rem)] font-extrabold leading-[1.15] tracking-tight">
-          {titleRows.map((row, rowIndex) => (
+          {t.hero.titleLines.map((row, rowIndex) => (
             <span key={rowIndex} className="flex flex-wrap gap-x-[0.25em]">
               {row.map((word, wordIndex) => (
                 <Reveal
-                  key={word.text}
+                  key={`${word.text}-${wordIndex}`}
                   as="span"
                   className="inline-block"
                   delay={120 * (rowIndex * 2 + wordIndex)}
                 >
-                  <span className={word.accent ? 'inline-block text-primary' : 'inline-block'}>
+                  <span
+                    className={
+                      word.accent
+                        ? 'inline-block text-gradient-gold'
+                        : 'inline-block text-gradient'
+                    }
+                  >
                     {word.text}
                   </span>
                 </Reveal>
@@ -76,27 +79,27 @@ export default function Hero() {
 
         <div className="mt-14 flex flex-wrap items-center justify-between gap-6 md:mt-20">
           <Reveal as="p" delay={480} className="max-w-md text-base text-muted-foreground md:text-lg">
-            تصميم طباعي · سوشيال ميديا · مونتاج فيديو
+            {t.hero.tagline}
           </Reveal>
           <Reveal as="div" delay={560} className="flex gap-3">
             <a
-              href="#design"
-              className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105"
+              href="#social"
+              className="btn-gradient rounded-full px-6 py-3 text-sm font-semibold text-primary-foreground"
             >
-              التصميم
+              {t.hero.ctaPrimary}
             </a>
             <a
               href="#video"
-              className="rounded-full border border-border px-6 py-3 text-sm font-semibold transition-colors hover:border-foreground"
+              className="shine rounded-full border border-border px-6 py-3 text-sm font-semibold transition-colors hover:border-primary hover:text-primary"
             >
-              الفيديو
+              {t.hero.ctaSecondary}
             </a>
           </Reveal>
         </div>
       </div>
 
       <div className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 md:block">
-        <div className="h-10 w-px bg-foreground/40" />
+        <div className="h-10 w-px animate-pulse bg-foreground/40" />
       </div>
     </section>
   )

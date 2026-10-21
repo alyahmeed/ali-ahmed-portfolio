@@ -203,35 +203,38 @@ export const projects: Project[] = [
   },
 ]
 
+/** Header navigation — labels come from the translation dictionary. */
 export const navLinks = [
-  { href: '#design', label: 'التصميم' },
-  { href: '#video', label: 'الفيديو' },
-  { href: '#about', label: 'عنّي' },
+  { href: '#social', key: 'social' as const },
+  { href: '#print', key: 'print' as const },
+  { href: '#video', key: 'video' as const },
+  { href: '#about', key: 'about' as const },
 ]
 
 export const socials = [
-  { label: 'واتساب', href: 'https://wa.me/201153349092' },
-  { label: 'الإيميل', href: 'mailto:alibnahmed82@gmail.com' },
-  { label: 'Behance', href: 'https://www.behance.net/aliahmed824' },
-  { label: 'Facebook', href: 'https://www.facebook.com/alyahmeed7' },
+  { key: 'whatsapp' as const, href: 'https://wa.me/201153349092' },
+  { key: 'email' as const, href: 'mailto:alibnahmed82@gmail.com' },
+  { key: 'behance' as const, href: 'https://www.behance.net/aliahmed824' },
+  { key: 'facebook' as const, href: 'https://www.facebook.com/alyahmeed7' },
 ]
 
 export const contactCards = [
-  { label: 'واتساب', value: '01153349092', href: 'https://wa.me/201153349092' },
-  { label: 'الإيميل', value: 'alibnahmed82@gmail.com', href: 'mailto:alibnahmed82@gmail.com' },
-  { label: 'Behance', value: 'aliahmed824', href: 'https://www.behance.net/aliahmed824' },
+  { key: 'whatsapp' as const, value: '01153349092', href: 'https://wa.me/201153349092' },
+  { key: 'email' as const, value: 'alibnahmed82@gmail.com', href: 'mailto:alibnahmed82@gmail.com' },
+  { key: 'behance' as const, value: 'aliahmed824', href: 'https://www.behance.net/aliahmed824' },
 ]
 
+/** Skill identifiers — the visible names live in the translation dictionary. */
 export const skills = [
-  'Photoshop',
-  'Illustrator',
-  'InDesign',
-  'Premiere Pro',
-  'After Effects',
-  'الخط والتايبوجرافي العربي',
-  'تجهيز ملفات الطباعة CMYK',
-  'تنسيق الكتب والمذكرات',
-]
+  'photoshop',
+  'illustrator',
+  'indesign',
+  'premiere',
+  'afterEffects',
+  'arabicTypography',
+  'printPrep',
+  'bookLayout',
+] as const
 
 export const heroMarqueeRows = [
   {
@@ -275,8 +278,40 @@ export const heroMarqueeRows = [
   },
 ]
 
+/** 16:9 video promo placeholders — swap in real videos when they are ready. */
 export const videoSlots = [
-  { kind: 'مونتاج · 16:9', title: 'فيديو مونتاج', aspect: 'aspect-video md:col-span-2' },
-  { kind: 'ريلز · 9:16', title: 'ريلز', aspect: 'aspect-[9/16]' },
-  { kind: 'ريلز · 9:16', title: 'ريلز', aspect: 'aspect-[9/16]' },
+  {
+    kind: 'Showreel',
+    title: 'شورت ريل',
+    poster: 'assets/poster-ashad-alnas-balaa.jpg',
+    aspect: 'aspect-video md:col-span-2',
+  },
+  {
+    kind: 'مونتاج',
+    title: 'فيديو مونتاج',
+    poster: 'assets/social-ferdaws-jummah.jpg',
+    aspect: 'aspect-video',
+  },
+  {
+    kind: 'مونتاج',
+    title: 'حلقة كاملة',
+    poster: 'assets/book-majalis-front.jpg',
+    aspect: 'aspect-video',
+  },
+  {
+    kind: 'إعلان',
+    title: 'فيديو إعلاني',
+    poster: 'assets/social-eid.jpg',
+    aspect: 'aspect-video',
+  },
+]
+
+/** 9:16 reel placeholders. */
+export const reelSlots = [
+  { kind: 'ريلز', title: 'ريلز — الفردوس', poster: 'assets/social-ferdaws-jummah.jpg' },
+  { kind: 'ريلز', title: 'ريلز — المناسبات', poster: 'assets/social-eid.jpg' },
+  { kind: 'ريلز', title: 'ريلز — صحبة طليحة', poster: 'assets/poster-sohba-saliha.jpg' },
+  { kind: 'ريلز', title: 'ريلز — سعد بن معاذ', poster: 'assets/poster-saad-bin-moaaz.jpg' },
+  { kind: 'ريلز', title: 'ريلز — النصائح', poster: 'assets/social-ferdaws-tips.jpg' },
+  { kind: 'ريلز', title: 'ريلز — كفالة', poster: 'assets/social-kafala.jpg' },
 ]

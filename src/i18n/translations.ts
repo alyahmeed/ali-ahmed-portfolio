@@ -1,0 +1,296 @@
+export type Locale = 'en' | 'ar'
+
+export const localeMeta: Record<Locale, { label: string; dir: 'ltr' | 'rtl' }> = {
+  en: { label: 'EN', dir: 'ltr' },
+  ar: { label: 'ع', dir: 'rtl' },
+}
+
+export const en = {
+  meta: {
+    title: 'Ali Ahmed — Portfolio',
+    description: 'Graphic designer & video editor — print, social media and video editing.',
+  },
+  header: {
+    brand: 'Ali Ahmed',
+    brandSuffix: 'Portfolio',
+    social: 'Social',
+    print: 'Print',
+    design: 'Design',
+    video: 'Video',
+    about: 'About',
+    contact: 'Contact',
+    menu: 'Menu',
+  },
+  hero: {
+    eyebrow: 'Selected Works — 2026',
+    titleLines: [
+      [
+        { text: 'Portfolio', accent: false },
+        { text: 'of', accent: false },
+      ],
+      [
+        { text: 'Ali', accent: true },
+        { text: 'Ahmed', accent: true },
+      ],
+    ],
+    tagline: 'Print design · Social media · Video editing',
+    ctaPrimary: 'Design',
+    ctaSecondary: 'Video',
+    scroll: 'Scroll',
+  },
+  sections: {
+    social: { eyebrow: 'Social Media', title: 'Social Media' },
+    print: { eyebrow: 'Design', title: 'Print Design' },
+    video: { eyebrow: 'Video & Editing', title: 'Video & Editing' },
+    reels: { eyebrow: 'Reels', title: 'Reels' },
+    about: { eyebrow: 'About', title: 'About Me' },
+    contact: { eyebrow: 'Contact', title: 'Contact' },
+  },
+  gallery: {
+    all: 'All',
+    showAll: 'Show all',
+    showLess: 'Show less',
+    more: 'more',
+    viewProject: 'View project',
+  },
+  filters: {
+    print: {
+      all: 'All',
+      books: 'Books',
+      memos: 'Memos',
+      covers: 'Book Covers',
+    },
+    social: {
+      all: 'All',
+      posts: 'Posts',
+      campaigns: 'Campaigns',
+      contests: 'Contests',
+    },
+  },
+  categories: {
+    print: 'Print',
+    social: 'Social Media',
+  },
+  video: {
+    promoKicker: 'Promo',
+    promoTitle: 'Video editing & motion',
+    promoBody:
+      'Editing reels, promotional videos and full episodes for social media channels and institutions.',
+    soon: 'Coming soon',
+    montage: 'Montage',
+    reel: 'Reel',
+    showcase: 'Showreel',
+    showcaseBody: 'A 60-second reel of the best work — landing, typography and rhythm in one cut.',
+  },
+  reels: {
+    kicker: 'Short form',
+    title: 'Reels',
+    body: 'Vertical edits designed for the first three seconds.',
+  },
+  about: {
+    name: 'Ali Ahmed Atef',
+    role: 'graphic designer & video editor',
+    location: 'Sohag & Aswan, Egypt',
+    bio: 'I design print collateral, book covers and social media campaigns, and I edit videos and reels. Over two years designing for my own organisation, Ferdaws and Thawab, and four months at Inbox for advertising and publishing.',
+    expLabel: 'years of experience',
+    projectsLabel: 'real projects',
+  },
+  skills: {
+    photoshop: 'Photoshop',
+    illustrator: 'Illustrator',
+    indesign: 'InDesign',
+    premiere: 'Premiere Pro',
+    afterEffects: 'After Effects',
+    arabicTypography: 'Arabic typography',
+    printPrep: 'CMYK print preparation',
+    bookLayout: 'Books & memos layout',
+  },
+  contact: {
+    cta: "Let's work together",
+    whatsapp: 'WhatsApp',
+    email: 'Email',
+    behance: 'Behance',
+  },
+  socials: {
+    whatsapp: 'WhatsApp',
+    email: 'Email',
+    behance: 'Behance',
+    facebook: 'Facebook',
+  },
+  footer: {
+    rights: 'Ali Ahmed',
+    year: '2026',
+  },
+  common: {
+    language: 'Language',
+    theme: 'Theme',
+    light: 'Light',
+    dark: 'Dark',
+  },
+  projects: {
+    1: { title: 'Scientific Councils for Women', client: 'Ferdaws Center' },
+    2: { title: 'Scientific Councils — Preface & Dedication', client: 'Ferdaws Center' },
+    3: { title: 'Nabd al-Sira — Front Cover', client: 'Dr. Salah Abu Muslim' },
+    4: { title: 'Nabd al-Sira — Back Cover', client: 'Dr. Salah Abu Muslim' },
+    5: { title: 'Ferdaws Friday Series', client: 'Ferdaws Center' },
+    6: { title: 'Ferdaws Pick Series', client: 'Ferdaws Center' },
+    7: { title: 'Ferdaws Touches Series', client: 'Ferdaws Center' },
+    8: { title: 'Ferdaws Friday Series — Part Two', client: 'Ferdaws Center' },
+    9: { title: 'Ferdaws Tips', client: 'Ferdaws Center' },
+    10: { title: 'Eid Campaign', client: 'Ferdaws Center' },
+    11: { title: 'Friday', client: 'Ferdaws Center' },
+    12: { title: 'Opportunity', client: 'Ferdaws Center' },
+    13: { title: 'Kafala', client: 'Ferdaws Center' },
+    14: { title: 'Contest', client: 'Ferdaws Center' },
+    15: { title: "Sa'd ibn Mu'adh Poster", client: "Sa'd ibn Mu'adh" },
+    16: { title: 'Sahba Talitha Poster', client: 'Sahba Talitha' },
+    17: { title: 'Strong Resolve Poster', client: 'Ferdaws Center' },
+  },
+}
+
+export type Dict = typeof en
+
+export const ar: Dict = {
+  meta: {
+    title: 'علي أحمد — معرض الأعمال',
+    description: 'مصمم جرافيك ومونتير — تصميم طباعي، سوشيال ميديا، ومونتاج فيديو.',
+  },
+  header: {
+    brand: 'علي أحمد',
+    brandSuffix: 'Portfolio',
+    social: 'السوشيال',
+    print: 'الطباعي',
+    design: 'التصميم',
+    video: 'الفيديو',
+    about: 'عنّي',
+    contact: 'تواصل',
+    menu: 'القائمة',
+  },
+  hero: {
+    eyebrow: 'Selected Works — 2026',
+    titleLines: [
+      [
+        { text: 'معرض', accent: false },
+        { text: 'أعمال', accent: false },
+      ],
+      [
+        { text: 'علي', accent: true },
+        { text: 'أحمد', accent: true },
+      ],
+    ],
+    tagline: 'تصميم طباعي · سوشيال ميديا · مونتاج فيديو',
+    ctaPrimary: 'التصميم',
+    ctaSecondary: 'الفيديو',
+    scroll: 'انزل',
+  },
+  sections: {
+    social: { eyebrow: 'Social Media', title: 'السوشيال ميديا' },
+    print: { eyebrow: 'Design', title: 'التصميم الطباعي' },
+    video: { eyebrow: 'Video & Editing', title: 'الفيديو والمونتاج' },
+    reels: { eyebrow: 'Reels', title: 'الريلز' },
+    about: { eyebrow: 'About', title: 'عنّي' },
+    contact: { eyebrow: 'Contact', title: 'تواصل' },
+  },
+  gallery: {
+    all: 'الكل',
+    showAll: 'عرض الكل',
+    showLess: 'عرض أقل',
+    more: 'المزيد',
+    viewProject: 'شوف المشروع',
+  },
+  filters: {
+    print: {
+      all: 'الكل',
+      books: 'الكتب',
+      memos: 'المذكرات',
+      covers: 'أغلفة الكتب',
+    },
+    social: {
+      all: 'الكل',
+      posts: 'منشورات',
+      campaigns: 'حملات',
+      contests: 'مسابقات',
+    },
+  },
+  categories: {
+    print: 'الطباعي',
+    social: 'السوشيال ميديا',
+  },
+  video: {
+    promoKicker: 'برومو',
+    promoTitle: 'مونتاج وحركة',
+    promoBody:
+      'مونتاج ريلز وفيديوهات ترويجية وحلقات كاملة لقنوات السوشيال ميديا والمؤسسات.',
+    soon: 'قريباً',
+    montage: 'مونتاج',
+    reel: 'ريلز',
+    showcase: 'شورت ريل',
+    showcaseBody: 'ريلز 60 ثانية بجمع أحسن شغل — إيقاع وحركة وتايبوجرافي.',
+  },
+  reels: {
+    kicker: 'صيغة قصيرة',
+    title: 'الريلز',
+    body: 'مونتاج عمودي مصمم لأقوى ثلاث ثواني.',
+  },
+  about: {
+    name: 'علي أحمد عاطف',
+    role: 'مصمم جرافيك ومونتير',
+    location: 'سوهاج وأسوان، مصر',
+    bio: 'بصمم مطبوعات وأغلفة كتب وحملات سوشيال ميديا، وبعمل مونتاج للفيديوهات والريلز. أكتر من سنتين مصمم لمؤسستي الفردوس وثواب، و٤ شهور في مكتب إنبوكس للدعاية والإعلان.',
+    expLabel: 'سنين خبرة',
+    projectsLabel: 'مشروع حقيقي',
+  },
+  skills: {
+    photoshop: 'Photoshop',
+    illustrator: 'Illustrator',
+    indesign: 'InDesign',
+    premiere: 'Premiere Pro',
+    afterEffects: 'After Effects',
+    arabicTypography: 'الخط والتايبوجرافي العربي',
+    printPrep: 'تجهيز ملفات الطباعة CMYK',
+    bookLayout: 'تنسيق الكتب والمذكرات',
+  },
+  contact: {
+    cta: 'يلا نشتغل سوا',
+    whatsapp: 'واتساب',
+    email: 'الإيميل',
+    behance: 'Behance',
+  },
+  socials: {
+    whatsapp: 'واتساب',
+    email: 'الإيميل',
+    behance: 'Behance',
+    facebook: 'فيسبوك',
+  },
+  footer: {
+    rights: 'علي أحمد',
+    year: '2026',
+  },
+  common: {
+    language: 'اللغة',
+    theme: 'الثيم',
+    light: 'فاتح',
+    dark: 'غامق',
+  },
+  projects: {
+    1: { title: 'المجالس العلمية للحلقات النسائية', client: 'مركز الفردوس' },
+    2: { title: 'المجالس العلمية — المقدمة والإهداء', client: 'مركز الفردوس' },
+    3: { title: 'نبض السيرة — الغلاف الأمامي', client: 'د. صلاح أبو مسلم' },
+    4: { title: 'نبض السيرة — الغلاف الخلفي', client: 'د. صلاح أبو مسلم' },
+    5: { title: 'سلسلة جمعة الفردوس', client: 'مركز الفردوس' },
+    6: { title: 'سلسلة انتيار الفردوس', client: 'مركز الفردوس' },
+    7: { title: 'سلسلة لمسات الفردوس', client: 'مركز الفردوس' },
+    8: { title: 'سلسلة جمعة الفردوس — الجزء الثاني', client: 'مركز الفردوس' },
+    9: { title: 'نصائح الفردوس', client: 'مركز الفردوس' },
+    10: { title: 'تصميم العيد', client: 'مركز الفردوس' },
+    11: { title: 'جمعة', client: 'مركز الفردوس' },
+    12: { title: 'فرصة', client: 'مركز الفردوس' },
+    13: { title: 'كفالة', client: 'مركز الفردوس' },
+    14: { title: 'مسابقة', client: 'مركز الفردوس' },
+    15: { title: 'بوستر سعد بن معاذ', client: 'سعد بن معاذ' },
+    16: { title: 'بوستر صحبة طليحة', client: 'صحبة طليحة' },
+    17: { title: 'بوستر أشدّ العزيمة', client: 'مركز الفردوس' },
+  },
+}
+
+export const dictionaries: Record<Locale, Dict> = { en, ar }
