@@ -10,7 +10,7 @@ export default function AboutSection() {
       <div className="grid items-center gap-10 md:grid-cols-[1fr_1.3fr] md:gap-16">
         <Reveal className="group relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-md bg-card">
           <img
-            src="/assets/ali-ahmed-portrait.jpg"
+            src="assets/ali-ahmed-portrait.jpg"
             alt="علي أحمد عاطف"
             className="absolute inset-0 size-full scale-110 object-cover grayscale transition-[filter] duration-700 group-hover:grayscale-0"
           />
