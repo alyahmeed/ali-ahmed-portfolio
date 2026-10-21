@@ -8,7 +8,7 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="relative overflow-hidden py-24 md:py-36">
-      <div className="aurora aurora-a -end-32 top-24 size-[26rem]" />
+      <div className="aurora aurora-a -end-32 top-24 h-[14rem] w-[36rem]" />
 
       <div className="shell relative">
         <SectionHeading number={3} eyebrow={t.sections.about.eyebrow} title={t.sections.about.title} />

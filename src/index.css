@@ -348,28 +348,32 @@
     opacity: 1;
   }
 
-  /* ── Ambient blobs ──────────────────────────────────────────────── */
+  /* ── Ambient light streaks ──────────────────────────────────────── */
 
+  /*
+   * Wide, soft bands of light instead of floating balls — they follow the
+   * horizontal rhythm of the marquee, the hairline rules and the card grid.
+   */
   .aurora {
     position: absolute;
-    border-radius: 9999px;
+    border-radius: 24px;
     filter: blur(90px);
     pointer-events: none;
     z-index: -1;
   }
 
   .aurora-a {
-    background: radial-gradient(circle at 50% 50%, hsl(var(--glow-a)) 0%, transparent 68%);
+    background: radial-gradient(ellipse at 50% 50%, hsl(var(--glow-a)) 0%, transparent 72%);
     animation: float-slow 22s ease-in-out infinite;
   }
 
   .aurora-b {
-    background: radial-gradient(circle at 50% 50%, hsl(var(--glow-b)) 0%, transparent 68%);
+    background: radial-gradient(ellipse at 50% 50%, hsl(var(--glow-b)) 0%, transparent 72%);
     animation: float-slower 28s ease-in-out infinite;
   }
 
   .aurora-c {
-    background: radial-gradient(circle at 50% 50%, hsl(var(--glow-c)) 0%, transparent 68%);
+    background: radial-gradient(ellipse at 50% 50%, hsl(var(--glow-c)) 0%, transparent 72%);
     animation: float-slow 34s ease-in-out infinite reverse;
   }
 

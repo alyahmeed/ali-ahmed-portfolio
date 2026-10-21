@@ -12,9 +12,9 @@ export default function Hero() {
       className="relative flex min-h-svh items-end overflow-hidden pb-14 pt-28 md:pb-20"
     >
       {/* soft colour blobs */}
-      <div className="aurora aurora-a -start-24 top-10 size-[28rem]" />
-      <div className="aurora aurora-b -end-32 top-1/3 size-[34rem]" />
-      <div className="aurora aurora-c bottom-0 start-1/3 size-[26rem]" />
+      <div className="aurora aurora-a -start-24 top-10 h-[16rem] w-[44rem]" />
+      <div className="aurora aurora-b -end-32 top-1/3 h-[18rem] w-[40rem]" />
+      <div className="aurora aurora-c bottom-0 start-1/3 h-[14rem] w-[38rem]" />
 
       <div
         className="absolute inset-[-10%] flex -rotate-6 flex-col justify-center gap-4"
@@ -115,16 +115,18 @@ export default function Hero() {
                   className="absolute inset-0 size-full scale-105 object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.12]"
                 />
                 <div className="card-veil absolute inset-0 opacity-70 transition-opacity duration-700 group-hover:opacity-40" />
-                <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 p-5">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary">
-                    {t.hero.photoCaption}
-                  </p>
+                <div className="absolute inset-x-0 bottom-0 p-5">
+                  <span className="gold-line mb-3 block h-px w-full" />
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary">
+                      {t.hero.photoCaption}
+                    </p>
+                    <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                      {t.hero.photoBadge}
+                    </p>
+                  </div>
                 </div>
               </div>
-
-              <span className="glass-pill absolute -start-3 bottom-8 rounded-full px-4 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-primary">
-                {t.hero.photoBadge}
-              </span>
             </div>
           </Reveal>
         </div>

@@ -25,7 +25,7 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="relative overflow-hidden py-24 md:py-36">
-      <div className="aurora aurora-b -start-24 bottom-0 size-[30rem]" />
+      <div className="aurora aurora-b -start-24 bottom-0 h-[15rem] w-[34rem]" />
 
       <div className="shell relative">
         <Reveal as="p" className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-primary">

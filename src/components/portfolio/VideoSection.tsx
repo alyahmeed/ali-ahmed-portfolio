@@ -24,7 +24,7 @@ export default function VideoSection() {
 
   return (
     <section id="video" className="relative overflow-hidden py-24 md:py-36">
-      <div className="aurora aurora-b -start-40 top-1/4 size-[30rem]" />
+      <div className="aurora aurora-b -start-40 top-1/4 h-[16rem] w-[38rem]" />
 
       <div className="shell relative">
         <SectionHeading number={2} eyebrow={t.sections.video.eyebrow} title={t.sections.video.title} />
@@ -112,7 +112,7 @@ export default function VideoSection() {
 
         {/* Reels — vertical edits, part of the same video section */}
         <div className="relative mt-20 md:mt-28">
-          <div className="aurora aurora-c -end-40 top-10 size-[28rem]" />
+          <div className="aurora aurora-c -end-40 top-10 h-[15rem] w-[34rem]" />
           <Reveal className="mb-8 max-w-xl">
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
               {t.reels.kicker}
