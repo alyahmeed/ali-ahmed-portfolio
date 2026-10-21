@@ -1,3 +1,117 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 20% 6%;
+    --foreground: 40 30% 94%;
+    --card: 40 18% 10%;
+    --card-foreground: 40 30% 94%;
+    --popover: 40 18% 10%;
+    --popover-foreground: 40 30% 94%;
+    --primary: 41 78% 58%;
+    --primary-foreground: 40 25% 8%;
+    --secondary: 40 12% 16%;
+    --secondary-foreground: 40 30% 94%;
+    --muted: 40 12% 16%;
+    --muted-foreground: 40 10% 60%;
+    --accent: 41 78% 58%;
+    --accent-foreground: 40 25% 8%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 40 30% 94%;
+    --border: 40 14% 22%;
+    --input: 40 14% 22%;
+    --ring: 41 78% 58%;
+    --radius: 0.375rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-foreground;
+  }
+}
+
+@layer components {
+  /* Page gutter + max width used by every section */
+  .shell {
+    @apply mx-auto w-full max-w-6xl px-5 md:px-8;
+  }
+}
+
+@layer utilities {
+  /* Fine film-grain overlay used behind the whole page */
+  .grain {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+
+  /* Thin metallic rule used as a divider */
+  .gold-line {
+    background: linear-gradient(
+      to left,
+      transparent,
+      hsl(var(--primary) / 0.65),
+      hsl(var(--primary) / 0.15)
+    );
+  }
+
+  /* Gradient veil revealed on hover over portfolio cards */
+  .card-veil {
+    background: linear-gradient(
+      to top,
+      hsl(var(--background) / 0.95),
+      hsl(var(--background) / 0.35) 55%,
+      transparent
+    );
+  }
+
+  /* Gradient scrim that fades the hero marquee into the page background */
+  .hero-veil {
+    background: linear-gradient(
+      to top,
+      hsl(var(--background)) 0%,
+      hsl(var(--background) / 0.92) 32%,
+      hsl(var(--background) / 0.5) 68%,
+      hsl(var(--background) / 0.2) 100%
+    );
+  }
+
+  /* Outlined display type used for oversized background numerals */
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px hsl(var(--foreground) / 0.14);
+  }
+
+  /* Slow zoom applied to the marquee thumbnails on hover */
+  .hoverZoomLink {
+    transition: transform 700ms cubic-bezier(0.2, 0.7, 0.3, 1);
+  }
+
+  .hoverZoomLink:hover {
+    transform: scale(1.06);
+  }
+}
