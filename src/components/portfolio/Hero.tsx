@@ -110,8 +110,11 @@ export default function Hero() {
 
               <div className="glass-strong relative aspect-[4/5] overflow-hidden rounded-[1.75rem] ring-glow">
                 <img
-                  src="assets/me.png"
+                  src="assets/me.jpg"
                   alt={t.hero.photoLabel}
+                  width={1000}
+                  height={1277}
+                  fetchPriority="high"
                   className="absolute inset-0 size-full scale-105 object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.12]"
                 />
                 <div className="card-veil absolute inset-0 opacity-70 transition-opacity duration-700 group-hover:opacity-40" />
