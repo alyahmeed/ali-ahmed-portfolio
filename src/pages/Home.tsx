@@ -4,6 +4,7 @@ import Hero from '../components/portfolio/Hero'
 import DesignSection from '../components/portfolio/DesignSection'
 import VideoSection from '../components/portfolio/VideoSection'
 import AboutSection from '../components/portfolio/AboutSection'
+import TeachersSection from '../components/portfolio/TeachersSection'
 import ContactSection from '../components/portfolio/ContactSection'
 import SiteFooter from '../components/portfolio/SiteFooter'
 
@@ -17,6 +18,7 @@ export default function Home() {
         <DesignSection />
         <VideoSection />
         <AboutSection />
+        <TeachersSection />
         <ContactSection />
       </main>
       <SiteFooter />

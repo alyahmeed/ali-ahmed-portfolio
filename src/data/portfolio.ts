@@ -189,11 +189,30 @@ export const projects: Project[] = [
   },
 ]
 
+export type Teacher = {
+  id: number
+  name: string
+  /** Optional short line under the name — a subject, a circle, a qualification. */
+  note?: string
+  /** Optional portrait path, e.g. `assets/teachers/name.jpg`. */
+  image?: string
+}
+
+/**
+ * Teachers of the women's Quran circles (حلقات النساء).
+ *
+ * Add one entry per teacher — the card prints the role label from the
+ * dictionary ("معلمة حلقات النساء") directly above her name. While the list is
+ * empty the section shows a "coming soon" card instead of an empty grid.
+ */
+export const teachers: Teacher[] = []
+
 /** Header navigation — labels come from the translation dictionary. */
 export const navLinks = [
   { href: '#design', key: 'design' as const },
   { href: '#video', key: 'video' as const },
   { href: '#about', key: 'about' as const },
+  { href: '#teachers', key: 'teachers' as const },
 ]
 
 export const socials = [

@@ -17,6 +17,7 @@ export const en = {
     video: 'Video',
     about: 'About',
     contact: 'Contact',
+    teachers: 'Teachers',
     menu: 'Menu',
   },
   hero: {
@@ -45,6 +46,7 @@ export const en = {
     video: { eyebrow: 'Video & Editing', title: 'Video & Editing' },
     reels: { eyebrow: 'Reels', title: 'Reels' },
     about: { eyebrow: 'About', title: 'About Me' },
+    teachers: { eyebrow: 'Teachers', title: "Women's Circles Teachers" },
     contact: { eyebrow: 'Contact', title: 'Contact' },
   },
   gallery: {
@@ -122,6 +124,12 @@ export const en = {
     printPrep: 'CMYK print preparation',
     bookLayout: 'Books & memos layout',
   },
+  teachers: {
+    role: "Women's circles teacher",
+    intro:
+      'The teachers who lead the women’s circles — each name is printed together with her role.',
+    empty: 'The teacher list is on its way.',
+  },
   contact: {
     cta: "Let's work together",
     whatsapp: 'WhatsApp',
@@ -179,6 +187,7 @@ export const ar: Dict = {
     video: 'الفيديو',
     about: 'عنّي',
     contact: 'تواصل',
+    teachers: 'المعلمات',
     menu: 'القائمة',
   },
   hero: {
@@ -208,6 +217,7 @@ export const ar: Dict = {
     video: { eyebrow: 'Video & Editing', title: 'الفيديو والمونتاج' },
     reels: { eyebrow: 'Reels', title: 'الريلز' },
     about: { eyebrow: 'About', title: 'عنّي' },
+    teachers: { eyebrow: 'المعلمات', title: 'معلمات حلقات النساء' },
     contact: { eyebrow: 'Contact', title: 'تواصل' },
   },
   gallery: {
@@ -283,6 +293,11 @@ export const ar: Dict = {
     arabicTypography: 'الخط والتايبوجرافي العربي',
     printPrep: 'تجهيز ملفات الطباعة CMYK',
     bookLayout: 'تنسيق الكتب والمذكرات',
+  },
+  teachers: {
+    role: 'معلمة حلقات النساء',
+    intro: 'المعلمات اللي بيقودوا حلقات النساء في المجالس العلمية — كل اسم مكتوب قدامه لقبه.',
+    empty: 'قائمة المعلمات هتنزل هنا قريب.',
   },
   contact: {
     cta: 'يلا نشتغل سوا',

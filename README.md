@@ -20,8 +20,12 @@ Built with **Vite + React + TypeScript + Tailwind**.
 - **Two main sections** — `01 Design` (print collateral + social media campaigns) and
   `02 Video & Editing` (16:9 promo slots + 9:16 reel slots, waiting for the Google
   Drive links).
-- **Portrait in the hero** — `assets/me.png` sits at the very top of the page, inside
+- **Portrait in the hero** — `assets/me.jpg` sits at the very top of the page, inside
   a frosted frame.
+- **Teachers section** — `04 Teachers` lists the women’s-circle teachers; every card
+  prints the role label `معلمة حلقات النساء` above the name. Add entries to the
+  `teachers` array in `src/data/portfolio.ts`; while it is empty the section shows a
+  “coming soon” card.
 - **Glass & motion** — frosted glass surfaces (header, cards, chips, stats, footer),
   soft aurora blobs in the background, brand gradients, glow borders, shine sweeps,
   scroll-reveal animations.
@@ -42,7 +46,8 @@ npm run preview  # serve the production build
 | 01 | Design (print + social) | `#design` | `DesignSection` |
 | 02 | Video & Editing | `#video` | `VideoSection` (reels live inside it) |
 | 03 | About Me | `#about` | `AboutSection` |
-| 04 | Contact | `#contact` | `ContactSection` |
+| 04 | Teachers | `#teachers` | `TeachersSection` |
+| 05 | Contact | `#contact` | `ContactSection` |
 
 ## Project structure
 
@@ -71,6 +76,7 @@ src/
     ProjectCard.tsx            project tile with gradient veil on hover
     VideoSection.tsx           promo panel + 16:9 slots + 9:16 reels grid
     AboutSection.tsx           bio, stats card, skills
+    TeachersSection.tsx        women's-circle teachers (role label + name cards)
     ContactSection.tsx         big CTA + WhatsApp / Email / Behance
     SiteFooter.tsx             copyright + social links
     Reveal.tsx                 IntersectionObserver scroll-reveal wrapper
@@ -78,14 +84,18 @@ src/
 
 ## Editing content
 
-**`src/data/portfolio.ts`** — projects, nav, socials, contact cards, skills, hero
-marquee rows, video slots, reel slots.
+**`src/data/portfolio.ts`** — projects, nav, socials, contact cards, skills, teachers,
+hero marquee rows, video slots, reel slots.
 
 **`src/i18n/translations.ts`** — every visible string, in both languages.
 Project titles and clients are keyed by project id (`projects: { 1: {...} }`).
 
 Adding a project = add an object to `projects`, drop the image in `public/assets/`,
 and add the matching entry to `projects` in both `en` and `ar`.
+
+Adding a teacher = add `{ id, name, note?, image? }` to `teachers`; the card prints the
+`teachers.role` label from the dictionary above the name, and an optional portrait from
+`public/assets/`.
 
 ## Colours & fonts
 

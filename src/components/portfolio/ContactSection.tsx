@@ -29,7 +29,7 @@ export default function ContactSection() {
 
       <div className="shell relative">
         <Reveal as="p" className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-primary">
-          04 <span dir="ltr">— {t.sections.contact.eyebrow}</span>
+          05 <span dir="ltr">— {t.sections.contact.eyebrow}</span>
         </Reveal>
 
         <Reveal
