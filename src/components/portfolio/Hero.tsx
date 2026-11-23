@@ -1,5 +1,4 @@
 import Reveal from './Reveal'
-import { heroMarqueeRows } from '../../data/portfolio'
 import { useT } from '../../i18n/LocaleContext'
 
 export default function Hero() {
@@ -10,40 +9,10 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-svh items-end overflow-hidden pb-14 pt-24 md:pb-20 md:pt-28"
     >
-      {/* soft aurora colour blobs */}
-      <div className="aurora aurora-a -start-24 top-10 h-[16rem] w-[44rem]" />
-      <div className="aurora aurora-b -end-32 top-1/3 h-[18rem] w-[40rem]" />
-      <div className="aurora aurora-c bottom-0 start-1/3 h-[14rem] w-[38rem]" />
-
-      {/* Background ambient marquee for cinematic depth */}
-      <div
-        className="absolute inset-[-10%] flex -rotate-6 flex-col justify-center gap-4 pointer-events-none"
-        style={{ opacity: 0.28 }}
-      >
-        {heroMarqueeRows.map((row, rowIndex) => (
-          <div key={rowIndex} dir="ltr" className="flex overflow-hidden">
-            <div
-              className="flex w-max shrink-0 gap-4 animate-marquee"
-              style={{
-                animationDuration: row.duration,
-                ...(row.reverse ? { animationDirection: 'reverse' } : {}),
-              }}
-            >
-              {[...row.images, ...row.images].map((src, index) => (
-                <img
-                  key={`${src}-${index}`}
-                  src={src}
-                  alt=""
-                  aria-hidden="true"
-                  className="h-32 w-auto shrink-0 rounded-md object-cover md:h-48"
-                />
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="hero-veil pointer-events-none absolute inset-0" />
+      {/* Lightweight GPU radial lighting (replaces heavy blur-90px filters & marquee for 60fps scrolling) */}
+      <div className="pointer-events-none absolute -start-24 top-10 h-[22rem] w-[36rem] bg-[radial-gradient(ellipse_at_center,hsl(var(--glow-a))_0%,transparent_70%)] opacity-50" />
+      <div className="pointer-events-none absolute -end-24 top-1/4 h-[24rem] w-[34rem] bg-[radial-gradient(ellipse_at_center,hsl(var(--glow-b))_0%,transparent_70%)] opacity-35" />
+      <div className="pointer-events-none absolute bottom-0 start-1/3 h-[18rem] w-[32rem] bg-[radial-gradient(ellipse_at_center,hsl(var(--glow-c))_0%,transparent_70%)] opacity-30" />
 
       <div className="shell relative w-full space-y-6">
         {/* Status Indicators Top Bar */}

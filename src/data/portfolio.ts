@@ -212,7 +212,6 @@ export const navLinks = [
   { href: '#work', key: 'work' as const },
   { href: '#design', key: 'design' as const },
   { href: '#video', key: 'video' as const },
-  { href: '#clients', key: 'brands' as const },
   { href: '#about', key: 'about' as const },
 ]
 
