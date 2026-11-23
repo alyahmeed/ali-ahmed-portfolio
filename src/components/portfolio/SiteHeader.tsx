@@ -82,13 +82,20 @@ export default function SiteHeader() {
       )}
     >
       <div className="shell flex h-16 items-center justify-between gap-4">
-        <a href="#top" className="group flex items-baseline gap-2">
-          <span className="font-display text-lg font-bold tracking-tight transition-colors group-hover:text-primary">
-            {t.header.brand}
-          </span>
-          <span className="hidden font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground sm:inline">
-            {t.header.brandSuffix}
-          </span>
+        <a href="#top" className="group flex items-center gap-2.5">
+          <div aria-hidden="true" className="flex items-center gap-1">
+            <span className="w-1.5 h-4 bg-brand-coral rounded-full"></span>
+            <span className="w-1.5 h-6 bg-brand-cyan rounded-full"></span>
+            <span className="w-1.5 h-5 bg-brand-accent rounded-full"></span>
+          </div>
+          <div className="flex items-baseline gap-1.5">
+            <span className="font-display text-lg font-bold tracking-tight transition-colors group-hover:text-primary">
+              {t.header.brand}
+            </span>
+            <span className="hidden font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground sm:inline">
+              {t.header.brandSuffix}
+            </span>
+          </div>
         </a>
 
         <nav className="hidden items-center gap-1 text-sm md:flex">
@@ -104,6 +111,26 @@ export default function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
+          {/* Quick Action Button matching Stitch */}
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border border-border bg-card/80 text-foreground hover:border-primary hover:text-primary transition-all active:scale-95 shadow-sm"
+          >
+            <span>{t.header.letsTalk}</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="size-3 text-muted-foreground rtl:-scale-x-100"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </a>
+
           {/* Language toggle */}
           <button
             type="button"

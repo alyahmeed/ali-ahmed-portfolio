@@ -209,10 +209,28 @@ export const teachers: Teacher[] = []
 
 /** Header navigation — labels come from the translation dictionary. */
 export const navLinks = [
+  { href: '#work', key: 'work' as const },
   { href: '#design', key: 'design' as const },
   { href: '#video', key: 'video' as const },
+  { href: '#clients', key: 'brands' as const },
   { href: '#about', key: 'about' as const },
-  { href: '#teachers', key: 'teachers' as const },
+]
+
+export const brandsList = [
+  { name: 'Red Bull', tag: 'Energy Drink', bg: 'bg-[#12151e]', border: 'border-zinc-800' },
+  { name: 'Creative Studio', tag: 'Design Agency', bg: 'bg-purple-900/60', border: 'border-purple-700/50' },
+  { name: 'Studio Cube', tag: '3D & Motion', bg: 'bg-[#10141d]', border: 'border-zinc-800' },
+  { name: 'Vision X', tag: 'Tech Media', bg: 'bg-[#0e3b75]', border: 'border-blue-600/40' },
+]
+
+export const creatorsList = [
+  { name: 'Coach Nada Zaki', color: 'bg-emerald-400' },
+  { name: 'Dr. Anas Kino', color: 'bg-red-400' },
+  { name: 'Karim Yelaab', color: 'bg-blue-400' },
+  { name: 'Hazem Ragheb', color: 'bg-amber-400' },
+  { name: 'Malak Dahshan', color: 'bg-emerald-400' },
+  { name: 'مركز الفردوس', color: 'bg-cyan-400' },
+  { name: 'د. صلاح أبو مسلم', color: 'bg-purple-400' },
 ]
 
 export const socials = [

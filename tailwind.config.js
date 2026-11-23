@@ -11,7 +11,16 @@ export default {
       screens: { '2xl': '1400px' },
     },
     extend: {
+      fontFamily: {
+        hand: ['"Caveat"', 'cursive'],
+      },
       colors: {
+        brand: {
+          accent: '#00ff88',
+          coral: '#ff5c5c',
+          blue: '#2d79f6',
+          cyan: '#00e5ff',
+        },
         background: 'hsl(var(--background) / <alpha-value>)',
         'background-elev': 'hsl(var(--background-elev) / <alpha-value>)',
         foreground: 'hsl(var(--foreground) / <alpha-value>)',

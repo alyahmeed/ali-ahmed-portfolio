@@ -294,6 +294,26 @@
 
   /* ── Surfaces & effects ──────────────────────────────────────────── */
 
+  /* ── Stitch utilities: Viewfinder, camera grid & glows ─────────── */
+  .viewfinder-grid {
+    background-size: 20px 20px;
+    background-image:
+      linear-gradient(to right, rgba(0, 255, 136, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 255, 136, 0.05) 1px, transparent 1px);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 12px rgba(0, 255, 136, 0.45);
+  }
+
+  .glow-avatar {
+    box-shadow: 0 0 0 3px hsl(var(--card)), 0 0 0 5px #ff5c5c;
+  }
+
+  .font-hand {
+    font-family: 'Caveat', cursive;
+  }
+
   /* Frosted panel used for cards, header and the "+N" tile */
   .glass {
     background: hsl(var(--card) / 0.72);
